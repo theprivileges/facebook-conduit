@@ -1,23 +1,21 @@
 {
-  "author": {
-    "name" : "Luiz Lopes",
-    "url" : "http://wickeddeveloper.com"
-  },
-  "name": "facebook-conduit",
-  "description": "A hubbub adapter for Facebook Real-Time API",
-  "keywords" : ["facebook", "real time", "graph api", "hubbub"],
-  "version": "0.1.0",
-  "repository": {
-    "type" : "git",
-    "url": "git://github.com/theprivileges/facebook-conduit.git"
-  },
-  "bugs" {
-    "url" : "https://github.com/theprivileges/facebook-conduit/issues"
-  },
-  "engines": {
-    "node": "~0.4.11"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "main" : "facebook-conduit"
+    "main" : "facebook-conduit",
+    "author": "Luiz Lopes (http://wickeddeveloper.com)",
+    "name": "facebook-conduit",
+    "description": "A simple subscriber end-point for Facebook's Real-time Updates",
+    "version": "0.1.0",
+    "homepage": "https://github.com/theprivileges/facebook-conduit",
+    "keywords" : ["facebook", "real time", "graph api", "hubbub"],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/theprivileges/facebook-conduit.git"
+    },
+    "bugs": {
+        "url" : "https://github.com/theprivileges/facebook-conduit/issues"
+    },
+    "engines": {
+        "node": "~0.4.11"
+    },
+    "dependencies": {},
+    "devDependencies": {}
 }
