@@ -14,8 +14,12 @@
         "url" : "https://github.com/theprivileges/facebook-conduit/issues"
     },
     "engines": {
-        "node": "~0.4.11"
+        "node": ">=0.4.0"
     },
+    "licenses": [{
+        "type": "MIT",
+        "url":  "https://raw.github.com/theprivileges/facebook-conduit/master/LICENSE"
+    }],
     "dependencies": {},
     "devDependencies": {}
 }
