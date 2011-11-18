@@ -3,7 +3,7 @@
     "author": "Luiz Lopes (http://wickeddeveloper.com)",
     "name": "facebook-conduit",
     "description": "A simple subscriber end-point for Facebook's Real-time Updates",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "homepage": "https://github.com/theprivileges/facebook-conduit",
     "keywords" : ["facebook", "real time", "graph api", "hubbub"],
     "repository": {
