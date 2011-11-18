@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name" : "Luiz Lopes",
+    "url" : "http://wickeddeveloper.com"
+  },
+  "name": "facebook-conduit",
+  "description": "A hubbub adapter for Facebook Real-Time API",
+  "keywords" : ["facebook", "real time", "graph api", "hubbub"],
+  "version": "0.1.0",
+  "repository": {
+    "type" : "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.4.11"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "main" : "facebook-conduit"
+}
