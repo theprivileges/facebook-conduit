@@ -22,7 +22,7 @@ EventEmitter = require('events').EventEmitter;
 urlParser = require('url').parse;
 http = require('http');
 
-Conduit = function() {
+Conduit = function () {
     var emitter;
 
     // Create new emitter
@@ -37,26 +37,26 @@ Conduit = function() {
 exports.Conduit = Conduit;
 
 // Recevies parsed URL object and returns true or false
-Conduit.prototype.unsubscribeCallback = function(urlParts) {
+Conduit.prototype.unsubscribeCallback = function (urlParts) {
     return true;
 };
 
 // Recevies parsed URL object and returns true or false
-Conduit.prototype.subscribeCallback = function(urlParts) {
+Conduit.prototype.subscribeCallback = function (urlParts) {
     return true;
 };
 
 // Assumes that there's a URL query parameter called 'sub' that
 // maps to the subscription name in redis. Override this if you like.
-Conduit.prototype.getEventName = function(urlParts) {
+Conduit.prototype.getEventName = function (urlParts) {
     return urlParts.query.sub;
 };
 
-Conduit.prototype.heartbeat = function(callbackId) {
+Conduit.prototype.heartbeat = function (callbackId) {
     this.usersLastSeen[callbackId] = Date.now();
 };
 
-parsePost = function(content, callback) {
+parsePost = function (content, callback) {
     var postObjs, entries, data;
     postObjs = [];
     try {
@@ -82,7 +82,7 @@ parsePost = function(content, callback) {
 };
 
 
-var pushHandler = function(req, res) {
+var pushHandler = function (req, res) {
     var me, now, urlParts, content, callbackId, lastSeen, mode;
     
     me = this;
@@ -102,11 +102,11 @@ var pushHandler = function(req, res) {
 
     lastSeen = parseInt(me.usersLastSeen[callbackId], 10);
 
-    req.on('data', function(data) {
+    req.on('data', function (data) {
         content += data;
     });
 
-    req.on('end', function() {
+    req.on('end', function () {
         mode = urlParts.query.mode;
         if (mode == 'unsubscribe') {
             if (me.unsubscribeCallback(urlParts)) {
@@ -121,10 +121,10 @@ var pushHandler = function(req, res) {
                 }
             }
         } else {
-            parsePost(content, function(imgObjs) {
-                for (var i in imgObjs) {
-                    if(imgObjs.hasOwnProperty(i)) {
-                        me.emitter.emit(callbackId, imgObjs[i]);
+            parsePost(content, function (postObjs) {
+                for (var i in postObjs) {
+                    if(postObjs.hasOwnProperty(i)) {
+                        me.emitter.emit(callbackId, postObjs[i]);
                     }
                 }
             });
@@ -133,11 +133,11 @@ var pushHandler = function(req, res) {
     });
 };
 
-Conduit.prototype.on = function(ev, listener) {
+Conduit.prototype.on = function (ev, listener) {
     return this.emitter.on(ev, listener);
 };
 
-Conduit.prototype.listen = function(port) {
+Conduit.prototype.listen = function (port) {
     var me, callback;
    
     me = this;
