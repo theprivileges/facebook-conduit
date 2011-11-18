@@ -76,7 +76,6 @@ parsePost = function (content, callback) {
         }
     } catch (e) {
         // Noop
-        console.debug(e.description);
     }
     callback(postObjs);
 };
