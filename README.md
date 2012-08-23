@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/theprivileges/facebook-conduit.png)](http://travis-ci.org/theprivileges/facebook-conduit)
 # Facebook-conduit
 Author: [Luiz Lopes](http://wickeddeveloper.com)
 
